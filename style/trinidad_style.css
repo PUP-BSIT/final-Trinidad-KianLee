@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 body {
@@ -20,7 +20,29 @@ header {
   color: #ffffff;
   margin-bottom: 30px;
   margin-top: 20px;
-  border: 3px solid #fff;
+}
+
+.profile img {
+  width: 150px;  
+  height: 150px;  
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.profile p {
+  max-width: 600px;
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 20px;
 }
 
 h2 {
@@ -55,6 +77,20 @@ h2 {
   padding: 2rem;
   text-align: center;
   max-width: 300px;
+  transition: transform 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+.interest:hover,
+.work:hover {
+  transform: scale(1.05);
+  background-color: #0194b0;
+}
+
+.interest:active,
+.work:active {
+  transform: scale(0.95);
+  background-color: #017a8d;
 }
 
 .work a {
@@ -66,20 +102,6 @@ section {
   padding: 20px 0;
 }
 
-.testimonial-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.testimonial-list p {
-  margin: 0;
-  padding: 5px 0;
-  text-decoration: none;
-}
-
 a {
   color: #fff;
 }
@@ -88,7 +110,6 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 5px solid rgb(247, 246, 246);
 }
 
 .image-container {
@@ -100,114 +121,25 @@ a {
 .image-box {
   width: calc(33.33% - 20px);
   margin: 10px;
+  overflow: hidden; 
 }
 
 .image-box img {
   width: 100%;
   height: auto;
+  max-height: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact {
-  text-align: center;
-}
-
-.form-container {
-  display: flex;
-  justify-content: center;
-}
-
-.container {
-  max-width: 600px;
-  width: 100%;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-}
-
-.class-session {
-  text-align: center;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.class-session h2 {
-  margin-top: 2rem;
-  background-color: #01b0d3;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.class-session p {
-  margin-top: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
-}
-
-.forms {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.message-container {
-  margin-top: 10px;
-}
-
-.checkbox-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.checkbox-container input[type="checkbox"] {
-  margin-right: 5px;
-}
-
-.submit-container {
-  margin-top: 20px;
-}
-
-input[type="email"],
-input[type="text"],
-input[type="number"],
-textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
-}
-
-label {
-  font-weight: bold;
-}
-
-input[type="submit"] {
-  background-color: rgb(241, 180, 65);
-  color: #fff;
-  padding: 14px 24px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-bottom: 1rem;
-}
-
-input[type="submit"]:hover {
-  background-color: rgb(220, 150, 40);
+.image-box img:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .header-goals {
   text-align: center;
   margin-bottom: -1rem;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .goals {
@@ -216,6 +148,7 @@ input[type="submit"]:hover {
   flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .goals h2 {
@@ -229,6 +162,7 @@ input[type="submit"]:hover {
   padding: 2rem;
   text-align: center;
   max-width: 300px;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .icon {
@@ -252,96 +186,74 @@ p {
   color: #ffffff;
   font-size: 0.9rem;
   line-height: 1.5;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-.comment-section {
-  margin-top: -2rem;
-  display: flex;
-  flex-direction: column;
+.notes {
+  background-color: #333344;
   padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 0.5rem;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.comment-section > h2 {
-  width: 100%;
+.note-box {
+  background-color: #01b0d3;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  color: #ffffff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s, transform 0.2s;
 }
 
-.comment-group {
-  display: flex;
-  flex-direction: column;
+.note-box p {
+  font-size: 1.1rem; 
+  line-height: 1.6; 
+  margin-bottom: 1.5rem;
 }
 
-textarea {
-  width: 100%;
-  height: 20vh;
-  padding: 15px;
-  outline: none;
-  font-size: 16px;
-  border-radius: 5px;
+.note-box:hover {
+  background-color: #0194b0;
+  transform: scale(1.05);
 }
 
-.comment-group input,
-.comment-group textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  width: 100%;
-  box-sizing: border-box;
+.note-box:active {
+  background-color: #017a8d;
+  transform: scale(0.95);
 }
 
-.comment-container {
+
+.footer {
+  background-color: #242333;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 30px; 
+}
+
+.footer-container {
   display: flex;
   justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; 
 }
 
-.comment-container button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.footer a {
+  color: #01b0d3;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
 }
 
-.sort-buttons {
-  text-align: center;
-  margin-bottom: 1rem;
+.footer a:hover {
+  color: #0194b0;
 }
 
-.sort-buttons select {
-  padding: 0.5rem;
-  font-size: 1rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background-color: #01b0d3;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.sort-buttons select:hover {
-  background-color: #0194b0;
-}
-
-.comments-section {
-  text-align: center;
-}
-
-.comments-list {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.comment {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.comment-author {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.comment-text {
-  margin: 0;
+.footer span {
+  font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
@@ -372,4 +284,3 @@ textarea {
     max-width: 100%;
   }
 }
-
