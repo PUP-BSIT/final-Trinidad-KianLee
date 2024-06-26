@@ -16,7 +16,7 @@
   text-align: center;
 }
 
-#intro-text {
+#intro_text {
   font-size: 2rem;
   margin-bottom: 20px;
   animation: color-change 5s infinite;
